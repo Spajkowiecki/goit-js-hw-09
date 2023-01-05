@@ -1,5 +1,5 @@
 {
-  "name": "goit-js-hw-09",
+  "name": "parcel-project-template",
   "version": "2.0.0",
   "homepage": "https://spajkowiecki.github.io/goit-js-hw-09",
   "scripts": {
@@ -11,24 +11,22 @@
     "url": "git+https://github.com/spajkowiecki/goit-js-hw-09"
   },
   "keywords": [],
-  "author": "Patryk Karolczak <kontakt@stronypatryka.pl>",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/spajkowiecki/goit-js-hw-09/issues"
+    "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
-    "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "lodash": "^4.17.21",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "main": "index.js",
-  "description": ""
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
