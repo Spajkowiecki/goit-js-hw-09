@@ -3,7 +3,7 @@ const stopColor = document.querySelector('[data-stop]');
 const { log } = console;
 
 let interval = null;
-
+stopColor.disabled = true;
 const changeColor = () => {
   startColor.parentNode.style.background = getRandomColor();
   interval = setInterval(() => {
@@ -13,12 +13,14 @@ const changeColor = () => {
 //after start pressing
 startColor.addEventListener('click', () => {
   startColor.disabled = true;
+  stopColor.disabled = false;
   changeColor();
 });
 
 stopColor.addEventListener('click', () => {
   log('stop');
   startColor.disabled = false;
+  stopColor.disabled = true;
   clearTimeout(interval);
 });
 

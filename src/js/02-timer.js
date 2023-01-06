@@ -8,6 +8,7 @@ const timerMinutes = document.querySelector('[data-minutes]');
 const timerSeconds = document.querySelector('[data-seconds]');
 
 const { log } = console;
+let timer;
 
 let date = new Date();
 let newDate = new Date();
@@ -20,6 +21,8 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0].getTime() <= date.getTime()) {
       window.alert('Please choose a date in the future');
+      setTimer(0, 0, 0, 0);
+      clearInterval(timer);
     } else {
       start.disabled = false;
       newDate = selectedDates[0];
@@ -48,7 +51,10 @@ function convertMs(ms) {
   const hours = Math.floor((ms % day) / hour);
   const minutes = Math.floor(((ms % day) % hour) / minute);
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  setTimer(days, hours, minutes, seconds);
+}
 
+function setTimer(days, hours, minutes, seconds) {
   timerDays.innerHTML = days;
   timerHours.innerHTML = addLeadingZero(String(hours));
   timerMinutes.innerHTML = addLeadingZero(String(minutes));
@@ -57,7 +63,7 @@ function convertMs(ms) {
 
 start.addEventListener('click', () => {
   start.disabled = true;
-  const timer = setInterval(() => {
+  timer = setInterval(() => {
     let timeDiff = newDate.getTime() - date.getTime();
     if (timeDiff > 0) {
       convertMs(timeDiff);
